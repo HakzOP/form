@@ -1,0 +1,132 @@
+<html>
+
+<head>
+<title>QB Test</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+//	$(document).ready(function(){
+//		$('#other').hide();
+	//});
+//
+
+
+//	$('#select-c').change(function () {
+//  var selected = $('#select-c option:selected').text();
+//   $('.other').toggle(selected == "Another Person");
+
+//	});
+
+
+	</script>
+</head>
+
+<body>
+
+	<h2>Test</h2>
+	
+	<form name=qdbform method=POST onsubmit='return validateForm(this)' encType='multipart/form-data' action=https://builderprogram-hsharif.quickbase.com/db/brm3ybzuw?act=API_AddRecord&apptoken=cwfcy7gdzqrsyncqbi2bn4u4kr>
+		
+		<input type=hidden name=fform value=1>
+		<table>
+
+		<label>Last name</label>
+		</br>
+		<input type=text size=40 name=_fid_9 >
+		</br>
+		<label>Given name</label>
+		</br>	
+		<input type=text size=40 name=_fid_6 >
+		</br>
+		<label>Middle name</label>	
+		</br>
+		<input type=text size=40 name=_fid_8 >
+	
+		
+		<tr><td class=m>Given Name</td>
+		<td class=m><input type=text size=40 name=_fid_6 ></td></tr>
+		<tr><td class=m>Middle name</td>
+		<td class=m><input type=text size=40 name=_fid_8 ></td></tr>
+		<tr><td class=m>Number</td>
+		<td class=m><input type=text size=10 name=_fid_13 ></td></tr>
+
+		<tr><td class=m>Are you requesting for assistance for;</td>
+			<td class=m>
+			<select id='select-c' name=_fid_15 >
+			<option>Yourself</option>
+			<option>Another Person</option>
+			</select></td></tr>
+		
+		<tr><td class=m>Case</td>
+		<td class=m><select  name=_fid_10 ><option>Theft</option>
+		<option>Unpaid Loan</option>
+		</select></td></tr>
+
+		<div id="secondChoice">
+
+			<tr><td class=m>Email address</td>
+			<td class=m><input type=text size=40 name=_fid_11 ></td></tr>
+
+			<tr><td class=m>Organization name</td>
+			<td class=m><input type=text size=40 name=_fid_12 ></td></tr>
+
+		</div>
+
+
+
+
+		</table><input type=hidden name=rdr value='http://'>
+		<input type=submit value=Save>
+
+	</form>
+
+		<script lang="javascript">
+	
+		function CheckForOther (item, origlen)
+			{
+			var sitem = item.options[item.selectedIndex];
+		
+			if (item.selectedIndex == (item.length - 1))
+				{
+				var val = prompt ("ADD A NEW CHOICE:", "");
+		
+				if (val == null)
+					item.selectedIndex = 0;
+				else	
+					{
+					var slen = item.length;
+		
+					if (slen == origlen+1){
+						item.options[slen] = new Option (sitem.text, sitem.value);
+								}
+					
+					item.options[item.length-2].text = val;
+					item.options[item.length-2].value = val;
+					item.selectedIndex = item.length-2;
+					}
+				}
+			}
+		</script>
+		<script lang=javascript>
+		function validateForm(theForm)
+		{
+		}
+		</script>
+
+		<script>
+			function validateForm() {
+				var x = document.forms["qdbform"]["_fid_9"].value;
+				if (x == "" || x == null) {
+				alert("Name must be filled out");
+				return false;
+			}
+
+			}
+		</script>
+
+
+
+</body>
+
+</html>
